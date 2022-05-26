@@ -1,10 +1,10 @@
 pipeline {
-	agent any
+	agent { label 'slave' }
     			stages {
         			stage('Checkout') {
             				steps {
-					sh "rm -rf /home/jenkins/workspace/pipe1/hello-world-war"	
-               				 sh "git clone https://github.com/sumak27396/hello-world-war.git"
+					sh "rm -rf /home/slave/workspace/pipe1/hello-world-war"	
+               				 sh "git clone https://github.com/PoojashreeSantosh/hello-world-war.git"
             					}
        					 }
 				stage('Build') {
@@ -17,7 +17,7 @@ pipeline {
 						sh "pwd"
 						sh "ls"
 						sh "whoami"
-               				 
+               				 sh "cp /home/slave/workspace/pipe1/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.62/webapps/"
             					}
        					 }
    				 }
