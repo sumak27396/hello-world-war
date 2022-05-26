@@ -16,7 +16,6 @@ pipeline {
             				steps {
 						sh "pwd"
 						sh "ls"
-						sh "whereis"
 						sh "whoami"
                				 sh "cp /home/workspace/pipe1/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.62/webapps/"
             					}
