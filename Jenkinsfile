@@ -10,7 +10,6 @@ pipeline {
 				stage('Build') {
             				steps {
                				 sh "cd hello-world-war"
-						sh "ls"
 						sh "docker build -t sumakeshava/hello:1.0"
             					}
        					 }
