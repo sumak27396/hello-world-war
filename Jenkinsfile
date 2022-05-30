@@ -10,12 +10,12 @@ pipeline {
 				stage('Build') {
             				steps {
                				 sh "cd hello-world-war"
-						sh "docker build -t sumakeshava/hello:1.0"
+						sh "docker build -t sumakeshava/hello:1.0 ."
             					}
        					 }
-				stage("publish") {
+				stage('publish') {
 					steps {
-						sh "docker login -u sumakeshava"
+						sh "docker login -u sumakeshava -p Sumakeshava03$"
 						sh "docker push sumakeshava/hello:1.0"
 					}
 				}
