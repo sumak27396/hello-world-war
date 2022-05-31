@@ -15,7 +15,7 @@ pipeline {
        					 }
 				stage('publish') {
 					steps {
-						sh "docker login -u sumakeshava -p Sumakeshava03$"
+						sh "docker login -u sumakeshava -p Sumakeshava03'\$'"
 						sh "docker push sumakeshava/hello:1.0"
 					}
 				}
